@@ -3,1570 +3,527 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GymOne 24/7 Bitburg – Werde Mitglied & Gewinne</title>
-<meta name="description" content="GymOne 24/7 Bitburg – Werde jetzt Mitglied und gewinne 1 Jahr gratis Premium-Mitgliedschaft + über 3.000€ in Preisen!">
+<title>GymOne 24/7 Bitburg – Dein Premium-Fitnessstudio</title>
+<meta name="description" content="GymOne 24/7 Bitburg – Werde jetzt Mitglied, spare die Anmeldegebühr und gewinne 1 Jahr gratis Premium-Mitgliedschaft!">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root {
-  --gold: #CEB573;
-  --gold-light: #e8d49a;
-  --gold-dark: #a8913d;
-  --black: #080808;
-  --white: #f5f5f0;
-  --gray: #1a1a1a;
-  --gray-mid: #2a2a2a;
-  --gray-light: #888;
-  --font-display: 'Inter', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-cond: 'Inter', sans-serif;
-}
-
-::selection { background: #ceb573; color: #000; }
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-thumb { background: #ceb573; border-radius: 4px; }
-::-webkit-scrollbar-track { background: #000; }
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--black);
-  color: var(--white);
-  font-family: var(--font-body);
-  font-weight: 400;
-  overflow-x: hidden;
-}
-
-/* LANGUAGE TOGGLE */
-.lang-bar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 40px;
-  background: rgba(8,8,8,0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(206,181,115,0.2);
-}
-
-.logo {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 900;
-  letter-spacing: 4px;
-  color: var(--gold);
-  text-decoration: none;
-}
-
-.lang-toggle {
-  display: flex;
-  gap: 4px;
-  background: var(--gray-mid);
-  border-radius: 6px;
-  padding: 4px;
-}
-
-.lang-btn {
-  background: none;
-  border: none;
-  color: var(--gray-light);
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  padding: 6px 14px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all .2s;
-}
-
-.lang-btn.active {
-  background: var(--gold);
-  color: var(--black);
-}
-
-/* HERO */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 120px 40px 80px;
-  position: relative;
-  overflow: hidden;
-  background: var(--black);
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 60% 50% at 50% 60%, rgba(206,181,115,0.08) 0%, transparent 70%),
-    repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(206,181,115,0.03) 60px, rgba(206,181,115,0.03) 61px),
-    repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(206,181,115,0.03) 60px, rgba(206,181,115,0.03) 61px);
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(206,181,115,0.12);
-  border: 1px solid rgba(206,181,115,0.3);
-  border-radius: 40px;
-  padding: 8px 20px;
-  font-family: var(--font-cond);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 32px;
-  animation: fadeUp .8s ease both;
-}
-
-.hero-headline {
-  font-family: var(--font-display);
-  font-size: clamp(56px, 11vw, 130px);
-  font-weight: 900;
-  line-height: .92;
-  letter-spacing: -2px;
-  color: var(--white);
-  margin-bottom: 24px;
-  animation: fadeUp .8s .15s ease both;
-}
-
-.hero-headline span {
-  color: var(--gold);
-  display: block;
-}
-
-.hero-sub {
-  font-size: clamp(16px, 2.5vw, 20px);
-  font-weight: 300;
-  color: rgba(245,245,240,0.7);
-  max-width: 560px;
-  line-height: 1.7;
-  margin-bottom: 48px;
-  animation: fadeUp .8s .3s ease both;
-}
-
-.hero-ctas {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
-  animation: fadeUp .8s .45s ease both;
-  margin-bottom: 56px;
-}
-
-.btn-primary {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--black);
-  font-family: var(--font-cond);
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 18px 40px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: all .25s;
-  border: 2px solid var(--gold);
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  background: var(--gold-light);
-  border-color: var(--gold-light);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(206,181,115,0.35);
-}
-
-.btn-secondary {
-  display: inline-block;
-  background: transparent;
-  color: var(--white);
-  font-family: var(--font-cond);
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 18px 40px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: all .25s;
-  border: 2px solid rgba(245,245,240,0.3);
-  cursor: pointer;
-}
-
-.btn-secondary:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-  transform: translateY(-2px);
-}
-
-.trust-bar {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  font-size: 14px;
-  color: rgba(245,245,240,0.6);
-  animation: fadeUp .8s .6s ease both;
-}
-
-.stars { color: var(--gold); font-size: 18px; letter-spacing: 2px; }
-
-/* EASTER EGG */
-.easter-egg {
-  position: absolute;
-  width: 42px;
-  height: 42px;
-  cursor: pointer;
-  opacity: 0;
-  animation: eggAppear 1s 2s ease forwards;
-  transition: transform .3s;
-  z-index: 10;
-}
-
-.easter-egg:hover { transform: scale(1.2) rotate(15deg); }
-
-.egg-svg { width: 100%; height: 100%; }
-
-@keyframes eggAppear {
-  to { opacity: 1; }
-}
-
-/* COUNTDOWN */
-.countdown-section {
-  background: var(--gold);
-  padding: 60px 40px;
-  text-align: center;
-}
-
-.countdown-label {
-  font-family: var(--font-cond);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  color: rgba(8,8,8,0.6);
-  text-transform: uppercase;
-  margin-bottom: 24px;
-}
-
-.countdown-title {
-  font-family: var(--font-display);
-  font-size: clamp(24px, 4vw, 40px);
-  font-weight: 900;
-  color: var(--black);
-  margin-bottom: 32px;
-  letter-spacing: -1px;
-}
-
-.countdown-timer {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.countdown-unit {
-  background: var(--black);
-  color: var(--gold);
-  border-radius: 6px;
-  padding: 20px 28px;
-  min-width: 90px;
-  text-align: center;
-}
-
-.countdown-num {
-  font-family: var(--font-display);
-  font-size: 52px;
-  font-weight: 900;
-  line-height: 1;
-  display: block;
-  letter-spacing: -2px;
-}
-
-.countdown-lbl {
-  font-family: var(--font-cond);
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: rgba(206,181,115,0.6);
-  text-transform: uppercase;
-  margin-top: 6px;
-  display: block;
-}
-
-/* SECTIONS */
-section { padding: 100px 40px; }
-
-.section-label {
-  font-family: var(--font-cond);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
-
-.section-title {
-  font-family: var(--font-display);
-  font-size: clamp(36px, 6vw, 72px);
-  font-weight: 900;
-  line-height: .95;
-  letter-spacing: -1px;
-  margin-bottom: 24px;
-}
-
-.section-sub {
-  font-size: 17px;
-  font-weight: 300;
-  color: rgba(245,245,240,0.65);
-  line-height: 1.7;
-  max-width: 540px;
-}
-
-/* HOW IT WORKS */
-.how-section { background: var(--gray); }
-
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 2px;
-  margin-top: 64px;
-}
-
-.step-card {
-  background: var(--black);
-  padding: 48px 32px;
-  position: relative;
-  transition: background .3s;
-}
-
-.step-card:hover { background: #111; }
-
-.step-num {
-  font-family: var(--font-display);
-  font-size: 80px;
-  font-weight: 900;
-  color: rgba(206,181,115,0.12);
-  line-height: 1;
-  margin-bottom: 16px;
-  transition: color .3s;
-  letter-spacing: -3px;
-}
-
-.step-card:hover .step-num { color: rgba(206,181,115,0.25); }
-
-.step-icon {
-  font-size: 32px;
-  margin-bottom: 16px;
-  display: block;
-}
-
-.step-title {
-  font-family: var(--font-cond);
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--gold);
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
-.step-desc {
-  font-size: 14px;
-  color: rgba(245,245,240,0.55);
-  line-height: 1.6;
-}
-
-/* PRIZES */
-.prizes-section { background: var(--black); }
-
-.prizes-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
-  margin-top: 64px;
-}
-
-.prize-main {
-  grid-column: 1 / -1;
-  background: var(--gold);
-  padding: 60px 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-
-.prize-main-title {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 5vw, 56px);
-  font-weight: 900;
-  color: var(--black);
-  line-height: .95;
-  letter-spacing: -1px;
-}
-
-.prize-main-value {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 48px);
-  color: rgba(8,8,8,0.5);
-  letter-spacing: 2px;
-}
-
-.prize-card {
-  background: var(--gray);
-  padding: 40px 32px;
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  transition: background .3s;
-}
-
-.prize-card:hover { background: #222; }
-
-.prize-emoji { font-size: 36px; flex-shrink: 0; }
-
-.prize-card-title {
-  font-family: var(--font-cond);
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--white);
-  margin-bottom: 6px;
-  text-transform: uppercase;
-}
-
-.prize-card-desc {
-  font-size: 13px;
-  color: rgba(245,245,240,0.5);
-  line-height: 1.5;
-}
-
-/* WHY SECTION */
-.why-section { background: var(--gray); }
-
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2px;
-  margin-top: 64px;
-}
-
-.why-card {
-  background: var(--black);
-  padding: 48px 32px;
-  text-align: center;
-  transition: background .3s;
-}
-
-.why-card:hover { background: #111; }
-
-.why-num {
-  font-family: var(--font-display);
-  font-size: 56px;
-  font-weight: 900;
-  color: var(--gold);
-  letter-spacing: -2px;
-  display: block;
-  margin-bottom: 8px;
-}
-
-.why-title {
-  font-family: var(--font-cond);
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: rgba(245,245,240,0.7);
-  text-transform: uppercase;
-}
-
-/* QUIZ */
-.quiz-section { background: var(--black); }
-
-.quiz-box {
-  max-width: 640px;
-  margin: 64px auto 0;
-  background: var(--gray);
-  border: 1px solid rgba(206,181,115,0.2);
-  border-radius: 8px;
-  padding: 48px;
-}
-
-.quiz-question {
-  font-family: var(--font-cond);
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--white);
-  margin-bottom: 24px;
-  text-transform: uppercase;
-}
-
-.quiz-options {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 32px;
-}
-
-.quiz-option {
-  background: var(--gray-mid);
-  border: 1px solid rgba(206,181,115,0.15);
-  border-radius: 6px;
-  padding: 14px 20px;
-  font-size: 15px;
-  color: rgba(245,245,240,0.8);
-  cursor: pointer;
-  transition: all .2s;
-  text-align: left;
-  font-family: var(--font-body);
-}
-
-.quiz-option:hover, .quiz-option.selected {
-  border-color: var(--gold);
-  color: var(--white);
-  background: rgba(206,181,115,0.1);
-}
-
-.quiz-progress {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 32px;
-}
-
-.quiz-dot {
-  height: 4px;
-  flex: 1;
-  background: var(--gray-mid);
-  border-radius: 2px;
-  transition: background .3s;
-}
-
-.quiz-dot.active { background: var(--gold); }
-
-/* TESTIMONIALS */
-.testimonials-section { background: var(--gray); }
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2px;
-  margin-top: 64px;
-}
-
-.testimonial-card {
-  background: var(--black);
-  padding: 40px 32px;
-  transition: background .3s;
-}
-
-.testimonial-card:hover { background: #111; }
-
-.t-stars { color: var(--gold); font-size: 16px; letter-spacing: 3px; margin-bottom: 16px; }
-
-.t-text {
-  font-size: 15px;
-  color: rgba(245,245,240,0.75);
-  line-height: 1.7;
-  margin-bottom: 24px;
-  font-style: italic;
-}
-
-.t-name {
-  font-family: var(--font-cond);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: var(--gold);
-  text-transform: uppercase;
-}
-
-/* CTA SECTION */
-.cta-section {
-  background: var(--black);
-  border-top: 1px solid rgba(206,181,115,0.15);
-  text-align: center;
-  padding: 120px 40px;
-}
-
-.cta-offer-box {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  background: rgba(206,181,115,0.08);
-  border: 1px solid rgba(206,181,115,0.25);
-  border-radius: 8px;
-  padding: 40px 56px;
-  margin: 48px auto;
-}
-
-.cta-offer-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 16px;
-  color: rgba(245,245,240,0.85);
-}
-
-.cta-offer-icon { color: var(--gold); font-size: 20px; }
-
-.cta-btns {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 16px;
-}
-
-/* LOCATION */
-.location-section { background: var(--gray); }
-
-.location-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  margin-top: 64px;
-  align-items: start;
-}
-
-.location-info { display: flex; flex-direction: column; gap: 24px; }
-
-.location-item {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-}
-
-.location-icon {
-  color: var(--gold);
-  font-size: 22px;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.location-item-title {
-  font-family: var(--font-cond);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-
-.location-item-text {
-  font-size: 15px;
-  color: rgba(245,245,240,0.65);
-  line-height: 1.6;
-}
-
-.map-placeholder {
-  background: var(--black);
-  border: 1px solid rgba(206,181,115,0.15);
-  border-radius: 8px;
-  padding: 40px;
-  text-align: center;
-  color: rgba(245,245,240,0.4);
-  font-size: 14px;
-}
-
-/* FAQ */
-.faq-section { background: var(--black); }
-
-.faq-list {
-  max-width: 720px;
-  margin: 64px auto 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.faq-item {
-  background: var(--gray);
-  border-left: 3px solid transparent;
-  transition: border-color .2s;
-  overflow: hidden;
-}
-
-.faq-item.open { border-left-color: var(--gold); }
-
-.faq-q {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 28px;
-  cursor: pointer;
-  font-family: var(--font-cond);
-  font-size: 17px;
-  font-weight: 600;
-  letter-spacing: .5px;
-  color: var(--white);
-  user-select: none;
-}
-
-.faq-q:hover { color: var(--gold); }
-
-.faq-arrow {
-  color: var(--gold);
-  font-size: 20px;
-  transition: transform .3s;
-  flex-shrink: 0;
-}
-
-.faq-item.open .faq-arrow { transform: rotate(45deg); }
-
-.faq-a {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .4s ease, padding .3s;
-  padding: 0 28px;
-  font-size: 15px;
-  color: rgba(245,245,240,0.6);
-  line-height: 1.7;
-}
-
-.faq-item.open .faq-a {
-  max-height: 200px;
-  padding: 0 28px 24px;
-}
-
-/* FINAL CTA */
-.final-cta {
-  background: var(--gold);
-  padding: 120px 40px;
-  text-align: center;
-}
-
-.final-cta .section-title { color: var(--black); }
-.final-cta .section-sub { color: rgba(8,8,8,0.6); margin: 0 auto 48px; }
-
-.final-cta .btn-primary {
-  background: var(--black);
-  border-color: var(--black);
-  color: var(--gold);
-}
-
-.final-cta .btn-primary:hover {
-  background: var(--gray);
-  border-color: var(--gray);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-}
-
-.final-cta .btn-secondary {
-  border-color: rgba(8,8,8,0.3);
-  color: var(--black);
-}
-
-.final-cta .btn-secondary:hover {
-  border-color: var(--black);
-  color: var(--black);
-}
-
-/* FOOTER */
-footer {
-  background: var(--black);
-  border-top: 1px solid rgba(206,181,115,0.1);
-  padding: 48px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.footer-links {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  color: rgba(245,245,240,0.4);
-  text-decoration: none;
-  font-size: 13px;
-  transition: color .2s;
-}
-
-.footer-links a:hover { color: var(--gold); }
-
-.footer-copy {
-  font-size: 12px;
-  color: rgba(245,245,240,0.25);
-}
-
-/* WHATSAPP STICKY */
-.wa-sticky {
-  position: fixed;
-  bottom: 32px;
-  right: 32px;
-  z-index: 999;
-  background: #25D366;
-  color: white;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  text-decoration: none;
-  box-shadow: 0 4px 24px rgba(37,211,102,0.4);
-  transition: transform .25s, box-shadow .25s;
-  animation: pulseWA 3s 3s ease-in-out infinite;
-}
-
-.wa-sticky:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 32px rgba(37,211,102,0.6);
-}
-
-@keyframes pulseWA {
-  0%, 100% { box-shadow: 0 4px 24px rgba(37,211,102,0.4); }
-  50% { box-shadow: 0 4px 40px rgba(37,211,102,0.7); }
-}
-
-/* POPUP */
-.popup-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  z-index: 2000;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.popup-overlay.show { display: flex; }
-
-.popup-box {
-  background: var(--gray);
-  border: 1px solid rgba(206,181,115,0.3);
-  border-radius: 12px;
-  padding: 48px 40px;
-  max-width: 440px;
-  text-align: center;
-  position: relative;
-  animation: popIn .4s cubic-bezier(.34,1.56,.64,1) both;
-}
-
-@keyframes popIn {
-  from { transform: scale(.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-.popup-egg { font-size: 64px; margin-bottom: 16px; }
-
-.popup-title {
-  font-family: var(--font-display);
-  font-size: 36px;
-  font-weight: 900;
-  color: var(--gold);
-  letter-spacing: -1px;
-  margin-bottom: 12px;
-}
-
-.popup-text {
-  font-size: 16px;
-  color: rgba(245,245,240,0.7);
-  line-height: 1.7;
-  margin-bottom: 28px;
-}
-
-.popup-close {
-  position: absolute;
-  top: 16px; right: 20px;
-  background: none;
-  border: none;
-  color: rgba(245,245,240,0.4);
-  font-size: 24px;
-  cursor: pointer;
-  transition: color .2s;
-}
-
-.popup-close:hover { color: var(--white); }
-
-/* CONTACT FORM */
-.form-section { background: var(--gray); }
-
-.contact-form {
-  max-width: 560px;
-  margin: 64px auto 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-.form-field {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.form-label {
-  font-family: var(--font-cond);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: var(--gold);
-  text-transform: uppercase;
-}
-
-.form-input {
-  background: var(--black);
-  border: 1px solid rgba(206,181,115,0.2);
-  border-radius: 4px;
-  padding: 14px 18px;
-  color: var(--white);
-  font-family: var(--font-body);
-  font-size: 15px;
-  transition: border-color .2s;
-  outline: none;
-}
-
-.form-input:focus { border-color: var(--gold); }
-
-.form-input::placeholder { color: rgba(245,245,240,0.3); }
-
-/* ANIMATIONS */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity .7s ease, transform .7s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .lang-bar { padding: 12px 20px; }
-  section { padding: 72px 20px; }
-  .hero { padding: 100px 20px 60px; }
-  .prizes-grid { grid-template-columns: 1fr; }
-  .location-grid { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-  .steps-grid { grid-template-columns: 1fr 1fr; }
-  .countdown-unit { min-width: 70px; padding: 14px 16px; }
-  .countdown-num { font-size: 38px; }
-  footer { flex-direction: column; text-align: center; }
-  .wa-sticky { bottom: 20px; right: 20px; }
-}
-
-/* DIVIDER */
-.gold-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  opacity: 0.3;
+:root{--gold:#CEB573;--gold-light:#e8d49a;--black:#000;--dark:#0a0a0a;--gray:#111;--gray2:#1a1a1a;--gray3:#222;--white:#fff;--muted:rgba(255,255,255,0.55);}
+::selection{background:var(--gold);color:#000;}
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
+::-webkit-scrollbar-track{background:#000;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:68px;background:rgba(0,0,0,0.93);backdrop-filter:blur(12px);border-bottom:1px solid rgba(206,181,115,0.15);}
+.nav-logo img{height:34px;}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--white);}
+.nav-cta{background:var(--gold)!important;color:var(--black)!important;font-weight:700!important;padding:9px 20px;border-radius:4px;}
+.nav-cta:hover{background:var(--gold-light)!important;}
+.lang-toggle{display:flex;gap:2px;background:var(--gray2);border-radius:5px;padding:3px;margin-left:8px;}
+.lang-btn{background:none;border:none;color:var(--muted);font-family:'Inter',sans-serif;font-size:12px;font-weight:700;padding:5px 10px;border-radius:3px;cursor:pointer;transition:all .2s;letter-spacing:1px;}
+.lang-btn.active{background:var(--gold);color:var(--black);}
+
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;padding:0;}
+.hero-bg{position:absolute;inset:0;background:url('https://anzeigen.gymone-bitburg.de/images/hero.jpg') center/cover no-repeat;}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.5) 50%,rgba(0,0,0,0.92) 100%);}
+.hero-content{position:relative;z-index:2;padding:80px 80px 96px;max-width:900px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(206,181,115,0.15);border:1px solid rgba(206,181,115,0.35);border-radius:40px;padding:7px 18px;font-size:13px;font-weight:600;color:var(--gold);letter-spacing:.5px;margin-bottom:28px;animation:fadeUp .7s ease both;}
+.hero-h1{font-size:clamp(52px,9vw,108px);font-weight:900;line-height:.9;letter-spacing:-3px;margin-bottom:24px;animation:fadeUp .7s .12s ease both;}
+.hero-h1 em{color:var(--gold);font-style:normal;}
+.hero-sub{font-size:clamp(15px,2vw,18px);color:rgba(255,255,255,0.75);max-width:560px;line-height:1.65;margin-bottom:40px;animation:fadeUp .7s .24s ease both;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp .7s .36s ease both;}
+
+.btn-gold{display:inline-block;background:var(--gold);color:var(--black);font-weight:800;font-size:14px;letter-spacing:.3px;padding:15px 32px;border-radius:4px;transition:all .25s;border:2px solid var(--gold);cursor:pointer;font-family:'Inter',sans-serif;}
+.btn-gold:hover{background:var(--gold-light);border-color:var(--gold-light);transform:translateY(-2px);box-shadow:0 10px 28px rgba(206,181,115,0.35);}
+.btn-outline{display:inline-block;background:transparent;color:var(--white);font-weight:700;font-size:14px;letter-spacing:.3px;padding:15px 32px;border-radius:4px;transition:all .25s;border:2px solid rgba(255,255,255,0.3);cursor:pointer;font-family:'Inter',sans-serif;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
+
+.cd-bar{background:var(--gold);padding:52px 40px;text-align:center;}
+.cd-eye{font-size:11px;font-weight:800;letter-spacing:4px;color:rgba(0,0,0,0.45);text-transform:uppercase;margin-bottom:10px;}
+.cd-title{font-size:clamp(20px,3.5vw,34px);font-weight:900;color:var(--black);letter-spacing:-1px;margin-bottom:30px;}
+.cd-units{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;}
+.cd-unit{background:var(--black);color:var(--gold);border-radius:6px;padding:16px 22px;min-width:84px;text-align:center;}
+.cd-num{display:block;font-size:46px;font-weight:900;line-height:1;letter-spacing:-2px;}
+.cd-lbl{display:block;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(206,181,115,0.5);margin-top:5px;}
+
+section{padding:88px 80px;}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.sec-title{font-size:clamp(32px,5vw,60px);font-weight:900;letter-spacing:-2px;line-height:.95;margin-bottom:18px;}
+.sec-sub{font-size:16px;color:var(--muted);max-width:520px;line-height:1.7;}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(206,181,115,0.2),transparent);}
+
+.how-section{background:var(--gray);}
+.steps-wrap{margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:2px;}
+.step{background:var(--black);padding:36px 28px;transition:background .25s;}
+.step:hover{background:#0d0d0d;}
+.step-n{font-size:12px;font-weight:800;color:var(--gold);letter-spacing:3px;margin-bottom:18px;}
+.step-title{font-size:16px;font-weight:800;letter-spacing:-.3px;margin-bottom:8px;}
+.step-desc{font-size:14px;color:var(--muted);line-height:1.65;}
+.bonus-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:2px;}
+.bonus-card{background:var(--gray2);padding:36px 28px;border-left:3px solid var(--gold);}
+.bonus-tag{display:inline-block;background:var(--gold);color:var(--black);font-size:10px;font-weight:800;letter-spacing:2px;padding:3px 9px;border-radius:3px;margin-bottom:14px;text-transform:uppercase;}
+.bonus-title{font-size:17px;font-weight:800;margin-bottom:8px;letter-spacing:-.3px;}
+.bonus-desc{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:14px;}
+.bonus-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(206,181,115,0.1);border:1px solid rgba(206,181,115,0.25);border-radius:4px;padding:7px 12px;font-size:13px;font-weight:700;color:var(--gold);}
+
+.prizes-section{background:var(--black);}
+.prize-hero{background:var(--gold);padding:48px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:52px;border-radius:4px;}
+.prize-hero-title{font-size:clamp(24px,4vw,48px);font-weight:900;color:var(--black);letter-spacing:-2px;line-height:.95;}
+.prize-hero-tag{font-size:11px;font-weight:800;letter-spacing:3px;color:rgba(0,0,0,0.4);text-transform:uppercase;margin-top:8px;}
+.prize-imgs{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:2px 0;}
+.prize-img-box{overflow:hidden;max-height:260px;}
+.prize-img-box img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s;}
+.prize-img-box:hover img{transform:scale(1.04);}
+.prize-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2px;margin-top:2px;}
+.prize-card{background:var(--gray);padding:28px;transition:background .25s;position:relative;}
+.prize-card:hover{background:var(--gray2);}
+.prize-card-img{width:100%;max-height:120px;object-fit:contain;margin-bottom:14px;opacity:0;transition:opacity .3s;display:block;}
+.prize-card:hover .prize-card-img{opacity:1;}
+.prize-card-name{font-size:15px;font-weight:800;letter-spacing:-.3px;margin-bottom:3px;}
+.prize-card-hint{font-size:12px;color:var(--muted);}
+.prize-more{background:var(--gray2);padding:28px;display:flex;align-items:center;gap:14px;}
+.prize-more-num{font-size:44px;font-weight:900;color:var(--gold);letter-spacing:-2px;}
+.prize-more-text{font-size:14px;color:var(--muted);}
+
+.why-section{background:var(--gray);}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2px;margin-top:52px;}
+.why-card{background:var(--black);padding:36px 24px;transition:background .25s;}
+.why-card:hover{background:#080808;}
+.why-num{font-size:48px;font-weight:900;color:var(--gold);letter-spacing:-2px;line-height:1;display:block;margin-bottom:6px;}
+.why-label{font-size:14px;font-weight:600;color:var(--muted);}
+
+.quiz-section{background:var(--black);text-align:center;}
+.quiz-wrap{max-width:580px;margin:52px auto 0;background:var(--gray);border:1px solid rgba(206,181,115,0.15);border-radius:8px;padding:44px 36px;}
+.quiz-step-lbl{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:18px;}
+.quiz-q{font-size:19px;font-weight:800;letter-spacing:-.5px;margin-bottom:24px;}
+.quiz-opts{display:flex;flex-direction:column;gap:9px;}
+.quiz-opt{background:var(--gray2);border:1px solid rgba(206,181,115,0.12);border-radius:6px;padding:13px 18px;font-size:15px;font-weight:500;color:rgba(255,255,255,0.8);cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;text-align:left;}
+.quiz-opt:hover,.quiz-opt.sel{border-color:var(--gold);background:rgba(206,181,115,0.08);color:var(--white);}
+.quiz-progress{display:flex;gap:5px;margin-bottom:24px;}
+.quiz-dot{height:3px;flex:1;background:var(--gray2);border-radius:2px;transition:background .3s;}
+.quiz-dot.on{background:var(--gold);}
+.quiz-result{display:none;}
+.quiz-result-icon{font-size:44px;margin-bottom:14px;}
+.quiz-result-text{font-size:17px;font-weight:700;margin-bottom:24px;letter-spacing:-.3px;}
+
+.t-section{background:var(--gray);}
+.t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;margin-top:52px;}
+.t-card{background:var(--black);padding:32px 24px;transition:background .25s;}
+.t-card:hover{background:#080808;}
+.t-stars{color:var(--gold);font-size:14px;letter-spacing:3px;margin-bottom:14px;}
+.t-text{font-size:15px;color:rgba(255,255,255,0.7);line-height:1.7;font-style:italic;margin-bottom:18px;}
+.t-name{font-size:13px;font-weight:700;color:var(--gold);letter-spacing:1px;}
+.t-rating{display:flex;align-items:center;gap:12px;margin-bottom:44px;}
+.t-rating-num{font-size:48px;font-weight:900;color:var(--gold);letter-spacing:-2px;line-height:1;}
+.t-rating-info{font-size:14px;color:var(--muted);}
+
+.deal-section{background:var(--black);text-align:center;}
+.deal-box{display:inline-flex;flex-direction:column;align-items:flex-start;gap:13px;background:rgba(206,181,115,0.06);border:1px solid rgba(206,181,115,0.2);border-radius:8px;padding:36px 44px;margin:44px auto 36px;text-align:left;}
+.deal-item{display:flex;align-items:center;gap:12px;font-size:16px;font-weight:500;color:rgba(255,255,255,0.85);}
+.deal-check{color:var(--gold);font-size:17px;font-weight:900;}
+
+.trial-section{background:var(--gray2);}
+.trial-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:52px;align-items:start;}
+.trial-feats{display:flex;flex-direction:column;gap:12px;margin-bottom:28px;}
+.trial-feat{display:flex;align-items:center;gap:10px;font-size:15px;color:rgba(255,255,255,0.8);}
+.trial-feat-icon{color:var(--gold);font-weight:900;}
+
+.loc-section{background:var(--black);}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:52px;}
+.loc-item{display:flex;gap:12px;margin-bottom:24px;align-items:flex-start;}
+.loc-icon{color:var(--gold);font-size:18px;margin-top:2px;flex-shrink:0;}
+.loc-title{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:3px;}
+.loc-text{font-size:14px;color:var(--muted);line-height:1.6;}
+.social-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:28px;}
+.social-btn{display:flex;flex-direction:column;align-items:center;gap:5px;background:var(--gray);border:1px solid rgba(206,181,115,0.1);border-radius:6px;padding:14px 8px;font-size:11px;font-weight:600;color:var(--muted);transition:all .2s;}
+.social-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(206,181,115,0.06);}
+.social-btn-icon{font-size:20px;}
+
+.faq-section{background:var(--gray);}
+.faq-list{max-width:700px;margin:52px auto 0;display:flex;flex-direction:column;gap:2px;}
+.faq-item{background:var(--black);overflow:hidden;}
+.faq-item.open{border-left:3px solid var(--gold);}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 26px;cursor:pointer;font-size:16px;font-weight:700;letter-spacing:-.2px;user-select:none;transition:color .2s;}
+.faq-q:hover{color:var(--gold);}
+.faq-icon{color:var(--gold);font-size:22px;transition:transform .3s;flex-shrink:0;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 26px;font-size:15px;color:var(--muted);line-height:1.7;}
+.faq-item.open .faq-a{max-height:200px;padding:0 26px 22px;}
+
+.final-section{background:var(--gold);padding:96px 80px;text-align:center;}
+.final-section .sec-title{color:var(--black);letter-spacing:-2px;}
+.final-section .sec-sub{color:rgba(0,0,0,0.5);margin:0 auto 44px;}
+.final-section .btn-gold{background:var(--black);border-color:var(--black);color:var(--gold);}
+.final-section .btn-gold:hover{background:#111;border-color:#111;}
+.final-section .btn-outline{border-color:rgba(0,0,0,0.25);color:var(--black);}
+.final-section .btn-outline:hover{border-color:var(--black);color:var(--black);}
+
+.form-section{background:var(--black);}
+.contact-form{max-width:520px;margin:52px auto 0;display:flex;flex-direction:column;gap:13px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
+.form-field{display:flex;flex-direction:column;gap:5px;}
+.form-label{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--gold);text-transform:uppercase;}
+.form-input,.form-textarea{background:var(--gray);border:1px solid rgba(206,181,115,0.15);border-radius:4px;padding:12px 15px;color:var(--white);font-family:'Inter',sans-serif;font-size:15px;transition:border-color .2s;outline:none;resize:vertical;}
+.form-input:focus,.form-textarea:focus{border-color:var(--gold);}
+.form-input::placeholder,.form-textarea::placeholder{color:rgba(255,255,255,0.22);}
+.form-note{font-size:12px;color:var(--muted);}
+.form-note a{color:var(--gold);text-decoration:underline;}
+
+footer{background:var(--dark);border-top:1px solid rgba(206,181,115,0.1);padding:36px 80px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-logo img{height:26px;}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+.footer-links a{font-size:13px;color:rgba(255,255,255,0.3);transition:color .2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.18);}
+.footer-legal{width:100%;font-size:11px;color:rgba(255,255,255,0.18);padding-top:16px;border-top:1px solid rgba(255,255,255,0.05);}
+
+.wa-btn{position:fixed;bottom:26px;right:26px;z-index:500;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,0.4);transition:transform .25s,box-shadow .25s;animation:waPulse 4s 4s ease-in-out infinite;}
+.wa-btn:hover{transform:scale(1.1);box-shadow:0 6px 26px rgba(37,211,102,0.6);}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,0.4);}50%{box-shadow:0 4px 32px rgba(37,211,102,0.7);}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+@media(max-width:900px){
+  nav{padding:0 20px;}
+  .nav-links{display:none;}
+  section{padding:60px 20px;}
+  .hero-content{padding:80px 20px 72px;}
+  .trial-grid,.loc-grid,.bonus-grid{grid-template-columns:1fr;gap:28px;}
+  .prize-imgs{grid-template-columns:1fr;}
+  footer{padding:28px 20px;flex-direction:column;text-align:center;}
+  .final-section{padding:72px 20px;}
+  .form-row{grid-template-columns:1fr;}
+  .wa-btn{bottom:18px;right:18px;}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="lang-bar">
-  <a href="#" class="logo">GYMONE</a>
+<nav>
+  <a href="#" class="nav-logo"><img src="https://anzeigen.gymone-bitburg.de/images/logo-white.png" alt="GymOne 24/7"></a>
+  <ul class="nav-links">
+    <li><a href="#how" data-de="So geht's" data-en="How it works"></a></li>
+    <li><a href="#prizes" data-de="Gewinne" data-en="Prizes"></a></li>
+    <li><a href="#about" data-de="Über uns" data-en="About"></a></li>
+    <li><a href="#contact" data-de="Kontakt" data-en="Contact"></a></li>
+    <li><a href="https://deine-mitgliedschaft.de/gymone" class="nav-cta" data-de="Jetzt Mitglied werden" data-en="Join now"></a></li>
+  </ul>
   <div class="lang-toggle">
     <button class="lang-btn active" onclick="setLang('de')" id="btn-de">DE</button>
     <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
   </div>
 </nav>
 
-<!-- EASTER EGG -->
-<div class="easter-egg" style="bottom: 38%; right: 8%;" onclick="showEggPopup()" title="Psst...">
-  <svg class="egg-svg" viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="30" cy="42" rx="24" ry="32" fill="#CEB573"/>
-    <ellipse cx="30" cy="42" rx="24" ry="32" fill="none" stroke="#a8913d" stroke-width="1.5"/>
-    <path d="M6 42 Q18 36 30 42 Q42 48 54 42" stroke="#a8913d" stroke-width="1.5" fill="none"/>
-    <ellipse cx="22" cy="36" rx="5" ry="7" fill="rgba(255,255,255,0.2)"/>
-  </svg>
-</div>
-
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="hero-badge">
-    🥚 <span data-de="Oster-Gewinnspiel 2026 — Limitierte Aktion" data-en="Easter Raffle 2026 — Limited Campaign"></span>
-  </div>
-  <h1 class="hero-headline">
-    <span data-de="WER HIER" data-en="START HERE."></span>
-    <span style="color:var(--gold)" data-de="STARTET," data-en="WIN BIG."></span>
-    <span data-de="GEWINNT." data-en=""></span>
-  </h1>
-  <p class="hero-sub" data-de="Werde jetzt Mitglied bei GymOne 24/7 in Bitburg — und sichere dir deine Chance auf 1 Jahr gratis Premium-Mitgliedschaft + über 20 weitere Preise im Gesamtwert von über 3.000 €." data-en="Join GymOne 24/7 in Bitburg now — and secure your chance to win 1 year of free Premium Membership + 20+ prizes worth over €3,000."></p>
-  <div class="hero-ctas">
-    <a href="https://deine-mitgliedschaft.de/gymone" class="btn-primary" data-de="Jetzt Mitglied werden & Lose sichern" data-en="Join now & secure your raffle entries"></a>
-    <a href="#how-it-works" class="btn-secondary" data-de="So funktioniert's" data-en="How it works"></a>
-  </div>
-  <div class="trust-bar">
-    <span class="stars">★★★★★</span>
-    <span data-de="4,9 Sterne · 233 Bewertungen" data-en="4.9 Stars · 233 Reviews"></span>
-  </div>
-</section>
-
-<!-- COUNTDOWN -->
-<div class="countdown-section" id="countdown-wrap">
-  <div class="section-label" data-de="Aktion läuft bis" data-en="Campaign ends in"></div>
-  <div class="countdown-title" data-de="Sichere dir jetzt deine Chance — Zeit läuft ab!" data-en="Claim your chance now — time is running out!"></div>
-  <div class="countdown-timer">
-    <div class="countdown-unit"><span class="countdown-num" id="cd-days">00</span><span class="countdown-lbl" data-de="Tage" data-en="Days"></span></div>
-    <div class="countdown-unit"><span class="countdown-num" id="cd-hours">00</span><span class="countdown-lbl" data-de="Stunden" data-en="Hours"></span></div>
-    <div class="countdown-unit"><span class="countdown-num" id="cd-mins">00</span><span class="countdown-lbl" data-de="Minuten" data-en="Minutes"></span></div>
-    <div class="countdown-unit"><span class="countdown-num" id="cd-secs">00</span><span class="countdown-lbl" data-de="Sekunden" data-en="Seconds"></span></div>
-  </div>
-</div>
-
-<!-- HOW IT WORKS -->
-<section class="how-section reveal" id="how-it-works">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div class="section-label" data-de="So einfach geht's" data-en="It's that simple"></div>
-    <h2 class="section-title" data-de="5 SCHRITTE ZUM GEWINN" data-en="5 STEPS TO WIN"></h2>
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num">01</div>
-        <span class="step-icon">🏋️</span>
-        <div class="step-title" data-de="Studio besuchen" data-en="Visit the gym"></div>
-        <div class="step-desc" data-de="Komm vorbei und werde Mitglied bei GymOne 24/7 in Bitburg." data-en="Come by and become a member at GymOne 24/7 in Bitburg."></div>
-      </div>
-      <div class="step-card">
-        <div class="step-num">02</div>
-        <span class="step-icon">🥚</span>
-        <div class="step-title" data-de="Eier finden" data-en="Find the eggs"></div>
-        <div class="step-desc" data-de="Suche im ganzen Studio nach 6 versteckten Ostereiern." data-en="Search the entire studio for 6 hidden Easter eggs."></div>
-      </div>
-      <div class="step-card">
-        <div class="step-num">03</div>
-        <span class="step-icon">🎟️</span>
-        <div class="step-title" data-de="Aufkleben" data-en="Stick them"></div>
-        <div class="step-desc" data-de="Klebe alle gefundenen Eier auf deine Loskarte." data-en="Stick all found eggs onto your raffle card."></div>
-      </div>
-      <div class="step-card">
-        <div class="step-num">04</div>
-        <span class="step-icon">📥</span>
-        <div class="step-title" data-de="Einwerfen" data-en="Drop it in"></div>
-        <div class="step-desc" data-de="Wirf die vollständige Karte in die Losbox am Empfang." data-en="Drop the completed card into the raffle box at reception."></div>
-      </div>
-      <div class="step-card" style="grid-column: span 1">
-        <div class="step-num">05</div>
-        <span class="step-icon">🏆</span>
-        <div class="step-title" data-de="Gewinnen" data-en="Win"></div>
-        <div class="step-desc" data-de="Alle Teilnehmer nehmen an der Verlosung bis 19.04.2026 teil." data-en="All participants enter the draw until 19.04.2026."></div>
-      </div>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span style="color:var(--gold);">★★★★★</span>
+      <span data-de="4,9 Sterne · 233 Bewertungen" data-en="4.9 Stars · 233 Reviews"></span>
+    </div>
+    <h1 class="hero-h1">
+      <span data-de="WER HIER STARTET," data-en="START HERE."></span><br>
+      <em data-de="GEWINNT." data-en="WIN BIG."></em>
+    </h1>
+    <p class="hero-sub" data-de="Finde goldene Ostereier-Sticker im Gym, sammle Lose und gewinne 1 Jahr gratis Mitgliedschaft + über 20 weitere Preise!" data-en="Find golden Easter egg stickers in the gym, collect entries and win 1 year free membership + 20+ more prizes!"></p>
+    <div class="hero-btns">
+      <a href="https://deine-mitgliedschaft.de/gymone" class="btn-gold" data-de="Jetzt Mitglied werden & Lose sichern" data-en="Join now & secure your raffle entries"></a>
+      <a href="#how" class="btn-outline" data-de="So funktioniert's" data-en="How it works"></a>
     </div>
   </div>
 </section>
 
-<div class="gold-divider"></div>
+<div class="cd-bar">
+  <div class="cd-eye" data-de="NUR NOCH WENIGE TAGE." data-en="ONLY A FEW DAYS LEFT."></div>
+  <div class="cd-title" data-de="Sichere dir jetzt deine Lose – bevor es zu spät ist." data-en="Secure your entries now – before it's too late."></div>
+  <div class="cd-units">
+    <div class="cd-unit"><span class="cd-num" id="cd-d">00</span><span class="cd-lbl" data-de="Tage" data-en="Days"></span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-h">00</span><span class="cd-lbl" data-de="Stunden" data-en="Hours"></span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-m">00</span><span class="cd-lbl" data-de="Minuten" data-en="Minutes"></span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-s">00</span><span class="cd-lbl" data-de="Sekunden" data-en="Seconds"></span></div>
+  </div>
+</div>
 
-<!-- PRIZES -->
-<section class="prizes-section reveal">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div class="section-label" data-de="Das gibt es zu gewinnen" data-en="What you can win"></div>
-    <h2 class="section-title" data-de="ÜBER 3.000 € IN PREISEN" data-en="OVER €3,000 IN PRIZES"></h2>
-    <div class="prizes-grid">
-      <div class="prize-main">
-        <div>
-          <div class="prize-main-title" data-de="1 JAHR GRATIS PREMIUM-MITGLIEDSCHAFT" data-en="1 YEAR FREE PREMIUM MEMBERSHIP"></div>
-        </div>
-        <div class="prize-main-value">HAUPTGEWINN</div>
-      </div>
-      <div class="prize-card">
-        <div class="prize-emoji">🛴</div>
-        <div>
-          <div class="prize-card-title" data-de="E-Scooter" data-en="E-Scooter"></div>
-          <div class="prize-card-desc" data-de="Elektrisch & stylisch durch Bitburg." data-en="Electric & stylish around Bitburg."></div>
-        </div>
-      </div>
-      <div class="prize-card">
-        <div class="prize-emoji">📱</div>
-        <div>
-          <div class="prize-card-title" data-de="iPhone" data-en="iPhone"></div>
-          <div class="prize-card-desc" data-de="Das neueste Modell für dich." data-en="The latest model, just for you."></div>
-        </div>
-      </div>
-      <div class="prize-card">
-        <div class="prize-emoji">🎧</div>
-        <div>
-          <div class="prize-card-title" data-de="Premium Kopfhörer" data-en="Premium Headphones"></div>
-          <div class="prize-card-desc" data-de="Musik beim Training auf neuem Level." data-en="Music at training on a new level."></div>
-        </div>
-      </div>
-      <div class="prize-card">
-        <div class="prize-emoji">🎁</div>
-        <div>
-          <div class="prize-card-title" data-de="+17 weitere Preise" data-en="+17 more prizes"></div>
-          <div class="prize-card-desc" data-de="Supplements, Sportequipment, Gutscheine & mehr." data-en="Supplements, sports gear, vouchers & more."></div>
-        </div>
-      </div>
+<section class="how-section reveal" id="how">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="eyebrow" data-de="Oster-Gewinnspiel" data-en="Easter Raffle"></div>
+    <h2 class="sec-title" data-de="SO FUNKTIONIERT'S" data-en="HOW IT WORKS"></h2>
+    <div class="steps-wrap">
+      <div class="step"><div class="step-n">01</div><div class="step-title" data-de="Gewinnspielkarte holen" data-en="Get your raffle card"></div><div class="step-desc" data-de="Nimm dir am Spielstand am Eingang deine Gewinnspielkarte." data-en="Pick up your raffle card at the stand near the entrance."></div></div>
+      <div class="step"><div class="step-n">02</div><div class="step-title" data-de="Goldene Ostereier finden" data-en="Find golden Easter eggs"></div><div class="step-desc" data-de="Wir verstecken täglich Hunderte goldene Ostereier-Sticker überall im Gym!" data-en="We hide hundreds of golden Easter egg stickers all over the gym every day!"></div></div>
+      <div class="step"><div class="step-n">03</div><div class="step-title" data-de="6 Eier = 1 volles Los" data-en="6 eggs = 1 full entry"></div><div class="step-desc" data-de="Klebe gefundene Eier auf deine Karte – 6 Stück füllen ein komplettes Los." data-en="Stick found eggs on your card – 6 fill one complete raffle entry."></div></div>
+      <div class="step"><div class="step-n">04</div><div class="step-title" data-de="Los beim Team eintauschen" data-en="Exchange at reception"></div><div class="step-desc" data-de="Gib deine volle Karte beim Team ab und erhalte dein offizielles Los." data-en="Hand in your card and receive your official raffle ticket."></div></div>
+      <div class="step"><div class="step-n">05</div><div class="step-title" data-de="So viele Lose wie möglich!" data-en="Collect as many as possible!"></div><div class="step-desc" data-de="Sammle so viele Lose wie du willst! Die Verlosung findet am 19. April statt." data-en="Collect as many entries as you want! Draw is on April 19th."></div></div>
+    </div>
+    <div class="bonus-grid">
+      <div class="bonus-card"><div class="bonus-tag">Bonus</div><div class="bonus-title" data-de="Buddy mitbringen" data-en="Bring a buddy"></div><div class="bonus-desc" data-de="Bring einen Freund zum Training mit und erhalte 1 Extra-Los. Jeder Buddy zählt einmalig im Aktionszeitraum." data-en="Bring a friend to train and get 1 extra entry. Each buddy counts once during the campaign."></div><div class="bonus-badge" data-de="= 1 Los für dich" data-en="= 1 entry for you"></div></div>
+      <div class="bonus-card"><div class="bonus-tag">Bonus</div><div class="bonus-title" data-de="Buddy meldet sich an" data-en="Buddy becomes a member"></div><div class="bonus-desc" data-de="Dein Buddy wird Mitglied? Dann gibt es 3 Lose für dich UND 3 Lose für deinen Buddy!" data-en="Your buddy joins as a member? You both get 3 entries each!"></div><div class="bonus-badge" data-de="= 3 Lose für euch beide" data-en="= 3 entries for you both"></div></div>
+    </div>
+    <div style="text-align:center;margin-top:44px"><a href="https://deine-mitgliedschaft.de/gymone" class="btn-gold" data-de="Jetzt mitmachen" data-en="Join now"></a></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="prizes-section reveal" id="prizes">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="eyebrow" data-de="Das kannst du gewinnen" data-en="What you can win"></div>
+    <h2 class="sec-title" data-de="GESAMTWERT: ÜBER 3.000 €" data-en="TOTAL VALUE: OVER €3,000"></h2>
+    <div class="prize-hero">
+      <div><div class="prize-hero-title" data-de="1 JAHR GRATIS PREMIUM-MITGLIEDSCHAFT" data-en="1 YEAR FREE PREMIUM MEMBERSHIP"></div><div class="prize-hero-tag" data-de="HAUPTGEWINN" data-en="GRAND PRIZE"></div></div>
+      <span style="font-size:52px;">🏆</span>
+    </div>
+    <div class="prize-imgs">
+      <div class="prize-img-box"><img src="https://anzeigen.gymone-bitburg.de/images/prizes-1.png" alt="Preise"></div>
+      <div class="prize-img-box"><img src="https://anzeigen.gymone-bitburg.de/images/prizes-2.jpg" alt="MaxiCard"></div>
+    </div>
+    <div class="prize-cards">
+      <div class="prize-card"><img src="https://anzeigen.gymone-bitburg.de/images/prizes/membership.png" alt="Mitgliedschaft" class="prize-card-img"><div class="prize-card-name" data-de="12 Monate Premium" data-en="12 months Premium"></div><div class="prize-card-hint" data-de="Hover für Bild" data-en="Hover for image"></div></div>
+      <div class="prize-card"><img src="https://anzeigen.gymone-bitburg.de/images/prizes/escooter.png" alt="E-Scooter" class="prize-card-img"><div class="prize-card-name">E-Scooter</div><div class="prize-card-hint">Xiaomi</div></div>
+      <div class="prize-card"><img src="https://anzeigen.gymone-bitburg.de/images/prizes/iphone.png" alt="iPhone" class="prize-card-img"><div class="prize-card-name">iPhone 15</div><div class="prize-card-hint">Apple</div></div>
+      <div class="prize-card"><img src="https://anzeigen.gymone-bitburg.de/images/prizes/speaker.png" alt="JBL" class="prize-card-img"><div class="prize-card-name">JBL Lautsprecher</div><div class="prize-card-hint">JBL Charge 5</div></div>
+      <div class="prize-more"><span class="prize-more-num">+16</span><span class="prize-more-text" data-de="weitere Preise – Supplements, Sportequipment, Gutscheine & mehr" data-en="more prizes – supplements, gear, vouchers & more"></span></div>
     </div>
   </div>
 </section>
 
-<!-- WHY GYMONE -->
-<section class="why-section reveal">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div class="section-label" data-de="Warum GymOne?" data-en="Why GymOne?"></div>
-    <h2 class="section-title" data-de="KEIN GYM WIE JEDES ANDERE" data-en="NOT JUST ANOTHER GYM"></h2>
-    <p class="section-sub" data-de="Premium-Ausstattung. Keine Wartezeiten. Immer offen. Das ist GymOne 24/7 Bitburg." data-en="Premium equipment. No waiting. Always open. That's GymOne 24/7 Bitburg."></p>
+<section class="why-section reveal" id="about">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="eyebrow" data-de="Warum GymOne 24/7?" data-en="Why GymOne 24/7?"></div>
+    <h2 class="sec-title" data-de="KEIN GYM WIE JEDES ANDERE" data-en="NOT YOUR AVERAGE GYM"></h2>
     <div class="why-grid">
-      <div class="why-card">
-        <span class="why-num">1.500</span>
-        <span class="why-title" data-de="m² Trainingsfläche" data-en="sqm Training Area"></span>
-      </div>
-      <div class="why-card">
-        <span class="why-num">120+</span>
-        <span class="why-title" data-de="Geräte" data-en="Machines"></span>
-      </div>
-      <div class="why-card">
-        <span class="why-num">24/7</span>
-        <span class="why-title" data-de="Geöffnet" data-en="Open"></span>
-      </div>
-      <div class="why-card">
-        <span class="why-num">0</span>
-        <span class="why-title" data-de="Wartezeiten" data-en="Waiting Times"></span>
-      </div>
+      <div class="why-card"><span class="why-num">1.500</span><span class="why-label" data-de="m² Trainingsfläche" data-en="sqm Training Area"></span></div>
+      <div class="why-card"><span class="why-num">120+</span><span class="why-label" data-de="Geräte" data-en="Machines"></span></div>
+      <div class="why-card"><span class="why-num">24/7</span><span class="why-label" data-de="Geöffnet" data-en="Open"></span></div>
+      <div class="why-card"><span class="why-num">0</span><span class="why-label" data-de="Wartezeiten" data-en="Waiting Times"></span></div>
     </div>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:32px;">
-      <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(245,245,240,0.6);">
-        <span style="color:var(--gold);">✓</span> EGYM
-      </div>
-      <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(245,245,240,0.6);">
-        <span style="color:var(--gold);">✓</span> Les Mills
-      </div>
-      <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(245,245,240,0.6);">
-        <span style="color:var(--gold);">✓</span> <span data-de="Kostenlose Parkplätze" data-en="Free Parking"></span>
-      </div>
-      <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(245,245,240,0.6);">
-        <span style="color:var(--gold);">✓</span> <span data-de="Moderne Umkleiden" data-en="Modern Changing Rooms"></span>
-      </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;">
+      <span style="display:flex;align-items:center;gap:7px;font-size:14px;color:var(--muted);background:var(--black);padding:9px 14px;border-radius:4px;"><span style="color:var(--gold);font-weight:900;">✓</span> EGYM</span>
+      <span style="display:flex;align-items:center;gap:7px;font-size:14px;color:var(--muted);background:var(--black);padding:9px 14px;border-radius:4px;"><span style="color:var(--gold);font-weight:900;">✓</span> Les Mills</span>
+      <span style="display:flex;align-items:center;gap:7px;font-size:14px;color:var(--muted);background:var(--black);padding:9px 14px;border-radius:4px;"><span style="color:var(--gold);font-weight:900;">✓</span> <span data-de="Kostenlose Parkplätze" data-en="Free Parking"></span></span>
+      <span style="display:flex;align-items:center;gap:7px;font-size:14px;color:var(--muted);background:var(--black);padding:9px 14px;border-radius:4px;"><span style="color:var(--gold);font-weight:900;">✓</span> <span data-de="Seit 2013 in Bitburg" data-en="In Bitburg since 2013"></span></span>
     </div>
   </div>
 </section>
 
-<!-- MINI QUIZ -->
 <section class="quiz-section reveal">
-  <div style="max-width:1200px;margin:0 auto;text-align:center;">
-    <div class="section-label" data-de="Finde deinen Einstieg" data-en="Find your starting point"></div>
-    <h2 class="section-title" data-de="WAS IST DEIN ZIEL?" data-en="WHAT'S YOUR GOAL?"></h2>
-    <div class="quiz-box">
-      <div class="quiz-progress">
-        <div class="quiz-dot active" id="qdot-0"></div>
-        <div class="quiz-dot" id="qdot-1"></div>
-        <div class="quiz-dot" id="qdot-2"></div>
-      </div>
-      <div class="quiz-question" id="quiz-q"></div>
-      <div class="quiz-options" id="quiz-opts"></div>
-      <div id="quiz-result" style="display:none">
-        <div style="font-size:40px;margin-bottom:16px;">💪</div>
-        <div class="quiz-question" id="quiz-result-text"></div>
-        <a href="https://deine-mitgliedschaft.de/gymone" class="btn-primary" style="margin-top:24px;display:inline-block;" data-de="Jetzt starten" data-en="Start now"></a>
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="eyebrow" data-de="Finde deinen Trainingsplan" data-en="Find your training plan"></div>
+    <h2 class="sec-title" data-de="WAS IST DEIN ZIEL?" data-en="WHAT'S YOUR GOAL?"></h2>
+    <div class="quiz-wrap">
+      <div class="quiz-progress"><div class="quiz-dot on" id="qd0"></div><div class="quiz-dot" id="qd1"></div><div class="quiz-dot" id="qd2"></div></div>
+      <div class="quiz-step-lbl" id="q-step">1 / 3</div>
+      <div class="quiz-q" id="q-text"></div>
+      <div class="quiz-opts" id="q-opts"></div>
+      <div class="quiz-result" id="q-result">
+        <div class="quiz-result-icon">💪</div>
+        <div class="quiz-result-text" id="q-result-text"></div>
+        <a href="https://deine-mitgliedschaft.de/gymone" class="btn-gold" data-de="Jetzt starten" data-en="Start now"></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials-section reveal">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div class="section-label" data-de="Was unsere Mitglieder sagen" data-en="What our members say"></div>
-    <h2 class="section-title" data-de="ECHTE STIMMEN" data-en="REAL VOICES"></h2>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="t-stars">★★★★★</div>
-        <div class="t-text" data-de="„Bestes Gym in der Region. 24/7 geöffnet, top Geräte, nie voll. Ich komme seit 2 Jahren und würde nie wechseln."" data-en="\"Best gym in the region. Open 24/7, top equipment, never crowded. I've been coming for 2 years and would never switch.\""></div>
-        <div class="t-name">— Sarah M.</div>
+<section class="t-section reveal">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="eyebrow" data-de="Das sagen unsere Mitglieder" data-en="What our members say"></div>
+    <h2 class="sec-title" data-de="ECHTE STIMMEN" data-en="REAL VOICES"></h2>
+    <div class="t-rating">
+      <span class="t-rating-num">4,9</span>
+      <div><div style="color:var(--gold);font-size:18px;letter-spacing:4px;margin-bottom:3px;">★★★★★</div><div class="t-rating-info" data-de="233 Bewertungen" data-en="233 Reviews"></div></div>
+    </div>
+    <div class="t-grid">
+      <div class="t-card"><div class="t-stars">★★★★★</div><div class="t-text" data-de="„Seit ich bei GymOne bin, hat sich mein Leben verändert. Die Geräte sind top und es ist nie überfüllt!"" data-en="\"Since joining GymOne, my life has changed. The equipment is top and it's never overcrowded!\""></div><div class="t-name">— Lisa M.</div></div>
+      <div class="t-card"><div class="t-stars">★★★★★</div><div class="t-text" data-de="„Ich trainiere um 5 Uhr morgens – dank 24/7 kein Problem. Bestes Gym in Bitburg."" data-en="\"I train at 5am – thanks to 24/7, no problem. Best gym in Bitburg.\""></div><div class="t-name">— Markus T.</div></div>
+      <div class="t-card"><div class="t-stars">★★★★★</div><div class="t-text" data-de="„Die Trainer sind super freundlich und die Atmosphäre ist einfach motivierend. Kann ich nur empfehlen!"" data-en="\"The trainers are super friendly and the atmosphere is just motivating. Highly recommend!\""></div><div class="t-name">— Sarah K.</div></div>
+      <div class="t-card"><div class="t-stars">★★★★★</div><div class="t-text" data-de="„Top Ausstattung, faire Preise und endlich ein Studio, das wirklich 24/7 offen hat. Bin begeistert!"" data-en="\"Top equipment, fair prices and finally a studio that's really open 24/7. I'm thrilled!\""></div><div class="t-name">— Kevin L.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="deal-section reveal">
+  <div style="max-width:800px;margin:0 auto">
+    <div class="eyebrow" data-de="Dein Vorteil beim Start" data-en="Your joining bonus"></div>
+    <h2 class="sec-title" data-de="DEIN DEAL." data-en="YOUR DEAL."></h2>
+    <div class="deal-box">
+      <div class="deal-item"><span class="deal-check">✓</span><span data-de="Anmeldegebühr sparen" data-en="Save the registration fee"></span></div>
+      <div class="deal-item"><span class="deal-check">✓</span><span data-de="Unbegrenzt Lose sammeln" data-en="Collect unlimited raffle entries"></span></div>
+      <div class="deal-item"><span class="deal-check">✓</span><span data-de="Gewinnchance auf über 3.000 €" data-en="Chance to win over €3,000"></span></div>
+    </div>
+    <a href="https://deine-mitgliedschaft.de/gymone" class="btn-gold" data-de="Jetzt Mitglied werden" data-en="Become a member now"></a>
+  </div>
+</section>
+
+<section class="trial-section reveal">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="eyebrow" data-de="Noch unsicher?" data-en="Not sure yet?"></div>
+    <h2 class="sec-title" data-de="KOSTENLOS TESTEN" data-en="TRY FOR FREE"></h2>
+    <div class="trial-grid">
+      <div>
+        <p class="sec-sub" style="margin-bottom:28px;" data-de="Kein Problem! Teste GymOne 24/7 unverbindlich mit einem kostenlosen Probetraining." data-en="No problem! Try GymOne 24/7 with a free trial session, no commitment."></p>
+        <div class="trial-feats">
+          <div class="trial-feat"><span class="trial-feat-icon">✓</span><span data-de="Kostenlos & unverbindlich" data-en="Free & no commitment"></span></div>
+          <div class="trial-feat"><span class="trial-feat-icon">✓</span><span data-de="Persönliche Einführung" data-en="Personal introduction"></span></div>
+          <div class="trial-feat"><span class="trial-feat-icon">✓</span><span data-de="Alle Geräte testen" data-en="Test all machines"></span></div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="#contact" class="btn-gold" data-de="Probetraining vereinbaren" data-en="Book trial session"></a>
+          <a href="https://wa.me/4915140584900" class="btn-outline" data-de="Per WhatsApp anfragen" data-en="Ask via WhatsApp"></a>
+        </div>
       </div>
-      <div class="testimonial-card">
-        <div class="t-stars">★★★★★</div>
-        <div class="t-text" data-de="„Die Ausstattung ist absolute Premium-Klasse. EGYM und Les Mills — das findest du nicht überall. Ich bin begeistert."" data-en="\"The equipment is absolute premium class. EGYM and Les Mills — you won't find that everywhere. I'm thrilled.\""></div>
-        <div class="t-name">— Markus T.</div>
-      </div>
-      <div class="testimonial-card">
-        <div class="t-stars">★★★★★</div>
-        <div class="t-text" data-de="„Endlich ein Gym das wirklich 24/7 offen ist. Ich trainiere nachts, und es ist alles perfekt — sauber, sicher, top."" data-en="\"Finally a gym that's really open 24/7. I train at night, and everything is perfect — clean, safe, great.\""></div>
-        <div class="t-name">— Lisa K.</div>
+      <div style="background:var(--black);border:1px solid rgba(206,181,115,0.12);border-radius:6px;padding:36px;display:flex;flex-direction:column;gap:18px;">
+        <div style="font-size:11px;font-weight:800;letter-spacing:2px;color:var(--gold);text-transform:uppercase;" data-de="Öffnungszeiten" data-en="Opening Hours"></div>
+        <div><div style="font-size:20px;font-weight:900;letter-spacing:-1px;margin-bottom:4px;">24/7</div><div style="font-size:14px;color:var(--muted);" data-de="Zugang rund um die Uhr, das ganze Jahr" data-en="Access around the clock, all year"></div></div>
+        <div style="height:1px;background:rgba(206,181,115,0.1);"></div>
+        <div><div style="font-size:12px;font-weight:700;color:var(--gold);margin-bottom:7px;" data-de="Betreuungszeiten" data-en="Staff Hours"></div><div style="font-size:14px;color:var(--muted);line-height:1.8;" data-de="Mo – Fr: 10:00 – 22:00 Uhr<br>Sa, So & Feiertage: 10:00 – 14:00 Uhr" data-en="Mon – Fri: 10:00 – 22:00<br>Sat, Sun & Holidays: 10:00 – 14:00"></div></div>
+        <div style="height:1px;background:rgba(206,181,115,0.1);"></div>
+        <a href="tel:+4965619455199" style="display:flex;align-items:center;gap:9px;font-size:15px;font-weight:600;color:var(--white);"><span style="color:var(--gold);">📞</span>+49 6561 9455-199</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA OFFER -->
-<section class="cta-section reveal">
-  <div style="max-width:800px;margin:0 auto;">
-    <div class="section-label" data-de="Dein Vorteil beim Start" data-en="Your joining bonus"></div>
-    <h2 class="section-title" data-de="JETZT STARTEN & DOPPELT GEWINNEN" data-en="START NOW & WIN TWICE"></h2>
-    <div class="cta-offer-box">
-      <div class="cta-offer-item">
-        <span class="cta-offer-icon">✓</span>
-        <span data-de="Anmeldegebühr komplett sparen" data-en="Save the registration fee completely"></span>
+<section class="loc-section reveal" id="contact">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="eyebrow" data-de="Hier findest du uns" data-en="Where to find us"></div>
+    <h2 class="sec-title" data-de="DEIN GYMONE IN BITBURG" data-en="YOUR GYMONE IN BITBURG"></h2>
+    <div class="loc-grid">
+      <div>
+        <div class="loc-item"><span class="loc-icon">📍</span><div><div class="loc-title" data-de="Adresse" data-en="Address"></div><div class="loc-text">GymOne 24/7<br>Claude-Dornier-Straße 5<br>54634 Bitburg</div></div></div>
+        <div class="loc-item"><span class="loc-icon">🅿️</span><div><div class="loc-title" data-de="Parken" data-en="Parking"></div><div class="loc-text" data-de="Kostenlose Parkplätze direkt vor der Tür" data-en="Free parking right outside the door"></div></div></div>
+        <div class="loc-item"><span class="loc-icon">📞</span><div><div class="loc-title" data-de="Telefon" data-en="Phone"></div><div class="loc-text"><a href="tel:+4965619455199" style="color:var(--gold);">+49 6561 9455-199</a></div></div></div>
+        <a href="https://maps.google.com/?q=Claude-Dornier-Straße+5+54634+Bitburg" target="_blank" class="btn-outline" style="display:inline-block;margin-top:4px;" data-de="In Google Maps öffnen" data-en="Open in Google Maps"></a>
       </div>
-      <div class="cta-offer-item">
-        <span class="cta-offer-icon">✓</span>
-        <span data-de="Sofort +5 Lose sichern" data-en="Instantly secure +5 raffle entries"></span>
+      <div>
+        <div style="font-size:11px;font-weight:800;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:18px;" data-de="Kontaktiere uns" data-en="Contact us"></div>
+        <div class="social-grid">
+          <a href="https://www.instagram.com/gymone_bitburg/" target="_blank" class="social-btn"><span class="social-btn-icon">📸</span>Instagram</a>
+          <a href="https://www.facebook.com/GymOneBitburg/" target="_blank" class="social-btn"><span class="social-btn-icon">👍</span>Facebook</a>
+          <a href="https://wa.me/4915140584900" target="_blank" class="social-btn"><span class="social-btn-icon">💬</span>WhatsApp</a>
+          <a href="https://www.tiktok.com/@gymone247" target="_blank" class="social-btn"><span class="social-btn-icon">🎵</span>TikTok</a>
+          <a href="https://www.youtube.com/channel/UCRoTcwNh0zCaP7fg4K6TWQw" target="_blank" class="social-btn"><span class="social-btn-icon">▶️</span>YouTube</a>
+          <a href="mailto:info@gymone-bitburg.de" class="social-btn"><span class="social-btn-icon">✉️</span>E-Mail</a>
+        </div>
       </div>
-      <div class="cta-offer-item">
-        <span class="cta-offer-icon">✓</span>
-        <span data-de="Chance auf 1 Jahr gratis Mitgliedschaft" data-en="Chance to win 1 year free membership"></span>
-      </div>
-      <div class="cta-offer-item">
-        <span class="cta-offer-icon">✓</span>
-        <span data-de="Über 20 weitere Preise im Gesamtwert von 3.000 €+" data-en="20+ more prizes worth €3,000+"></span>
-      </div>
-    </div>
-    <div class="cta-btns">
-      <a href="https://deine-mitgliedschaft.de/gymone" class="btn-primary" data-de="Jetzt Mitglied werden" data-en="Become a member now"></a>
-      <a href="https://wa.me/49XXXXXXXXX" class="btn-secondary" data-de="WhatsApp Kontakt" data-en="WhatsApp Contact"></a>
     </div>
   </div>
 </section>
 
-<!-- CONTACT FORM -->
-<section class="form-section reveal">
-  <div style="max-width:1200px;margin:0 auto;text-align:center;">
-    <div class="section-label" data-de="Probetraining sichern" data-en="Book a trial session"></div>
-    <h2 class="section-title" data-de="KOMM EINFACH VORBEI" data-en="JUST COME BY"></h2>
-    <p class="section-sub" style="margin:0 auto;" data-de="Trag dich ein und wir melden uns bei dir — kostenlos & unverbindlich." data-en="Sign up and we'll get back to you — free & non-binding."></p>
+<section class="faq-section reveal">
+  <div style="max-width:1200px;margin:0 auto;text-align:center">
+    <div class="eyebrow" data-de="Häufige Fragen" data-en="FAQ"></div>
+    <h2 class="sec-title" data-de="DEINE FRAGEN" data-en="YOUR QUESTIONS"></h2>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-de="Ist es im Studio voll?" data-en="Is the gym crowded?"></span><span class="faq-icon">+</span></div><div class="faq-a" data-de="Nein. Auf 1.500 m² und über 120 Geräten gibt es bei uns so gut wie keine Wartezeiten." data-en="No. With 1,500 sqm and 120+ machines, there's virtually no waiting."></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-de="Kann ich wirklich jederzeit trainieren?" data-en="Can I really train anytime?"></span><span class="faq-icon">+</span></div><div class="faq-a" data-de="Ja. Mit deiner Mitgliedschaft bekommst du einen Zugangs-Chip — 24/7, 365 Tage im Jahr, auch nachts und an Feiertagen." data-en="Yes. Your membership includes an access chip — 24/7, 365 days a year, even at night and on holidays."></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-de="Brauche ich Erfahrung?" data-en="Do I need experience?"></span><span class="faq-icon">+</span></div><div class="faq-a" data-de="Überhaupt nicht. Ob Anfänger oder Profi — du bist willkommen. Das EGYM-System führt dich intelligent durch dein Training." data-en="Not at all. Whether beginner or pro — you're welcome. The EGYM system guides you intelligently."></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-de="Wie funktioniert das Oster-Gewinnspiel?" data-en="How does the Easter raffle work?"></span><span class="faq-icon">+</span></div><div class="faq-a" data-de="Hol dir eine Karte am Eingang, finde 6 Sticker im Gym, klebe sie auf und tausche die Karte gegen ein offizielles Los. Als neues Mitglied sparst du zusätzlich die Anmeldegebühr." data-en="Get a card at the entrance, find 6 stickers in the gym, stick them on and exchange the card for an official ticket. New members also save the registration fee."></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-de="Was kostet die Mitgliedschaft?" data-en="How much does membership cost?"></span><span class="faq-icon">+</span></div><div class="faq-a" data-de="Alle Infos findest du unter deine-mitgliedschaft.de/gymone oder frag uns per WhatsApp." data-en="All info at deine-mitgliedschaft.de/gymone or just ask via WhatsApp."></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="form-section reveal" style="background:var(--gray);">
+  <div style="max-width:1200px;margin:0 auto;text-align:center">
+    <div class="eyebrow" data-de="Schreib uns" data-en="Get in touch"></div>
+    <h2 class="sec-title" data-de="KONTAKTFORMULAR" data-en="CONTACT FORM"></h2>
     <form class="contact-form" onsubmit="submitForm(event)">
       <div class="form-row">
-        <div class="form-field">
-          <label class="form-label" data-de="Vorname" data-en="First name"></label>
-          <input class="form-input" type="text" placeholder="Max" required>
-        </div>
-        <div class="form-field">
-          <label class="form-label" data-de="Nachname" data-en="Last name"></label>
-          <input class="form-input" type="text" placeholder="Mustermann" required>
-        </div>
+        <div class="form-field"><label class="form-label" data-de="Vorname" data-en="First name"></label><input class="form-input" type="text" placeholder="Max" required></div>
+        <div class="form-field"><label class="form-label" data-de="Nachname" data-en="Last name"></label><input class="form-input" type="text" placeholder="Mustermann" required></div>
       </div>
-      <div class="form-field">
-        <label class="form-label" data-de="E-Mail" data-en="Email"></label>
-        <input class="form-input" type="email" placeholder="max@beispiel.de" required>
-      </div>
-      <div class="form-field">
-        <label class="form-label" data-de="Telefon (optional)" data-en="Phone (optional)"></label>
-        <input class="form-input" type="tel" placeholder="+49 XXX XXXXXXX">
-      </div>
-      <button type="submit" class="btn-primary" style="margin-top:8px;" data-de="Probetraining anfragen" data-en="Request trial session"></button>
+      <div class="form-field"><label class="form-label" data-de="E-Mail" data-en="Email"></label><input class="form-input" type="email" placeholder="max@beispiel.de" required></div>
+      <div class="form-field"><label class="form-label" data-de="Nachricht" data-en="Message"></label><textarea class="form-textarea" rows="4" placeholder="..."></textarea></div>
+      <div class="form-note" data-de="Mit dem Absenden stimmst du unserer <a href='https://www.gymone-bitburg.de/datenschutz' target='_blank'>Datenschutzerklärung</a> zu." data-en="By submitting you agree to our <a href='https://www.gymone-bitburg.de/datenschutz' target='_blank'>Privacy Policy</a>."></div>
+      <button type="submit" class="btn-gold" data-de="Absenden" data-en="Submit"></button>
     </form>
   </div>
 </section>
 
-<!-- LOCATION -->
-<section class="location-section reveal">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div class="section-label" data-de="Wo du uns findest" data-en="Where to find us"></div>
-    <h2 class="section-title" data-de="DEIN GYMONE IN BITBURG" data-en="YOUR GYMONE IN BITBURG"></h2>
-    <div class="location-grid">
-      <div class="location-info">
-        <div class="location-item">
-          <span class="location-icon">📍</span>
-          <div>
-            <div class="location-item-title" data-de="Adresse" data-en="Address"></div>
-            <div class="location-item-text">Claude-Dornier-Straße 5<br>54634 Bitburg</div>
-          </div>
-        </div>
-        <div class="location-item">
-          <span class="location-icon">🕐</span>
-          <div>
-            <div class="location-item-title" data-de="Öffnungszeiten" data-en="Opening Hours"></div>
-            <div class="location-item-text" data-de="24/7 — täglich geöffnet, das ganze Jahr" data-en="24/7 — open every day, all year round"></div>
-          </div>
-        </div>
-        <div class="location-item">
-          <span class="location-icon">👤</span>
-          <div>
-            <div class="location-item-title" data-de="Betreuungszeiten" data-en="Staff Hours"></div>
-            <div class="location-item-text" data-de="Mo–Fr: 09:00–21:00 Uhr<br>Sa–So: 10:00–18:00 Uhr" data-en="Mon–Fri: 9am–9pm<br>Sat–Sun: 10am–6pm"></div>
-          </div>
-        </div>
-        <div class="location-item">
-          <span class="location-icon">🅿️</span>
-          <div>
-            <div class="location-item-title" data-de="Parken" data-en="Parking"></div>
-            <div class="location-item-text" data-de="Kostenlose Parkplätze direkt vor dem Studio" data-en="Free parking directly in front of the studio"></div>
-          </div>
-        </div>
-      </div>
-      <div class="map-placeholder">
-        <div style="font-size:48px;margin-bottom:16px;">🗺️</div>
-        <div style="font-size:16px;margin-bottom:8px;color:var(--gold);">Claude-Dornier-Straße 5</div>
-        <div>54634 Bitburg</div>
-        <a href="https://maps.google.com/?q=Claude-Dornier-Straße+5+54634+Bitburg" target="_blank" class="btn-secondary" style="display:inline-block;margin-top:24px;font-size:13px;padding:12px 28px;" data-de="In Google Maps öffnen" data-en="Open in Google Maps"></a>
-      </div>
+<section class="final-section reveal">
+  <div style="max-width:800px;margin:0 auto">
+    <div class="eyebrow" style="color:rgba(0,0,0,0.4);" data-de="Bereit zu gewinnen?" data-en="Ready to win?"></div>
+    <h2 class="sec-title" data-de="STARTE JETZT. GEWINNE GROSS." data-en="START NOW. WIN BIG."></h2>
+    <p class="sec-sub" data-de="Melde dich jetzt an, spare die Anmeldegebühr und sichere dir deine Lose für das Oster-Gewinnspiel." data-en="Sign up now, save the registration fee and secure your entries for the Easter raffle."></p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:0">
+      <a href="https://deine-mitgliedschaft.de/gymone" class="btn-gold" data-de="Mitglied werden" data-en="Become a member"></a>
+      <a href="https://wa.me/4915140584900" class="btn-outline" data-de="WhatsApp Kontakt" data-en="WhatsApp Contact"></a>
+      <a href="#contact" class="btn-outline" data-de="Kontaktformular" data-en="Contact form"></a>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq-section reveal">
-  <div style="max-width:1200px;margin:0 auto;text-align:center;">
-    <div class="section-label" data-de="Deine Fragen" data-en="Your questions"></div>
-    <h2 class="section-title" data-de="FAQ" data-en="FAQ"></h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span data-de="Ist das Gym oft voll?" data-en="Is the gym often crowded?"></span>
-          <span class="faq-arrow">+</span>
-        </div>
-        <div class="faq-a" data-de="Nein — durch unsere 1.500 qm Trainingsfläche und über 120 Geräte gibt es bei uns so gut wie keine Wartezeiten. Trainiere entspannt, wann immer du willst." data-en="No — with our 1,500 sqm training area and 120+ machines, there's virtually no waiting. Train comfortably whenever you want."></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span data-de="Kann ich wirklich jederzeit trainieren?" data-en="Can I really train anytime?"></span>
-          <span class="faq-arrow">+</span>
-        </div>
-        <div class="faq-a" data-de="Ja, absolut. GymOne ist 24 Stunden am Tag, 7 Tage die Woche, 365 Tage im Jahr geöffnet. Mit deiner Mitgliedschaft erhältst du einen Chip für den Zugang — auch nachts und an Feiertagen." data-en="Yes, absolutely. GymOne is open 24 hours a day, 7 days a week, 365 days a year. Your membership includes a chip for access — even at night and on holidays."></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span data-de="Brauche ich Erfahrung?" data-en="Do I need experience?"></span>
-          <span class="faq-arrow">+</span>
-        </div>
-        <div class="faq-a" data-de="Überhaupt nicht. Ob Anfänger oder Profi — bei GymOne bist du willkommen. Unser Team unterstützt dich gerne beim Einstieg, und das EGYM-System führt dich intelligent durch dein Training." data-en="Not at all. Whether beginner or pro — you're welcome at GymOne. Our team is happy to support you, and the EGYM system intelligently guides your workout."></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span data-de="Wie nehme ich am Gewinnspiel teil?" data-en="How do I enter the raffle?"></span>
-          <span class="faq-arrow">+</span>
-        </div>
-        <div class="faq-a" data-de="Werde Mitglied, suche im Studio nach 6 Ostereiern, klebe sie auf deine Loskarte und wirf sie in die Losbox. Fertig! Plus: Als neues Mitglied erhältst du sofort 5 Bonuslose." data-en="Become a member, find 6 Easter eggs in the studio, stick them on your raffle card and drop it in the box. Done! Plus: As a new member you instantly get 5 bonus entries."></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span data-de="Bis wann läuft die Aktion?" data-en="How long does the campaign run?"></span>
-          <span class="faq-arrow">+</span>
-        </div>
-        <div class="faq-a" data-de="Die Aktion läuft bis zum 19. April 2026. Die Ziehung findet danach statt. Alle Teilnehmer werden informiert." data-en="The campaign runs until April 19, 2026. The draw takes place afterwards. All participants will be notified."></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final-cta reveal">
-  <div style="max-width:800px;margin:0 auto;">
-    <div class="section-label" style="color:rgba(8,8,8,0.5);" data-de="Dein Moment ist jetzt" data-en="Your moment is now"></div>
-    <h2 class="section-title" data-de="STARTE JETZT. GEWINNE GROSS." data-en="START NOW. WIN BIG."></h2>
-    <p class="section-sub" data-de="Warte nicht länger. Werde Mitglied, sichere dir deine Lose und starte in die beste Version von dir." data-en="Don't wait. Become a member, secure your raffle entries and start becoming your best self."></p>
-    <div class="cta-btns">
-      <a href="https://deine-mitgliedschaft.de/gymone" class="btn-primary" data-de="Jetzt Mitglied werden" data-en="Become a member now"></a>
-      <a href="https://wa.me/49XXXXXXXXX" class="btn-secondary" data-de="WhatsApp schreiben" data-en="WhatsApp us"></a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <a href="#" class="logo" style="font-size:20px;">GYMONE</a>
+  <div class="footer-logo"><img src="https://anzeigen.gymone-bitburg.de/images/logo-white.png" alt="GymOne"></div>
   <div class="footer-links">
-    <a href="https://www.gymone-bitburg.de/datenschutz" target="_blank" data-de="Datenschutzerklärung" data-en="Privacy Policy"></a>
-    <a href="#" data-de="Impressum" data-en="Imprint"></a>
-    <a href="#" data-de="Gewinnspielbedingungen" data-en="Raffle Terms"></a>
+    <a href="https://www.gymone-bitburg.de/datenschutz" target="_blank" data-de="Datenschutz" data-en="Privacy Policy"></a>
+    <a href="https://deine-mitgliedschaft.de/gymone" data-de="Mitglied werden" data-en="Join now"></a>
   </div>
-  <div class="footer-copy">© 2026 GymOne 24/7 Bitburg. <span data-de="Alle Rechte vorbehalten." data-en="All rights reserved."></span></div>
+  <div class="footer-copy">© 2026 GymOne 24/7 Bitburg</div>
+  <div class="footer-legal" data-de="Teilnahme ab 18 Jahren. Gewinnspiel endet am 19.04.2026. Teilnahmebedingungen im Studio." data-en="Participation from 18 years. Raffle ends 19.04.2026. Terms and conditions in the studio."></div>
 </footer>
 
-<!-- WHATSAPP STICKY -->
-<a href="https://wa.me/49XXXXXXXXX" class="wa-sticky" target="_blank" title="WhatsApp">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.121 1.531 5.858L.057 23.572a.75.75 0 00.92.92l5.666-1.484A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.713 9.713 0 01-5.03-1.404l-.36-.214-3.733.977.997-3.648-.235-.374A9.718 9.718 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+<a href="https://wa.me/4915140584900" class="wa-btn" target="_blank">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.121 1.531 5.858L.057 23.572a.75.75 0 00.92.92l5.666-1.484A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.713 9.713 0 01-5.03-1.404l-.36-.214-3.733.977.997-3.648-.235-.374A9.718 9.718 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
 </a>
 
-<!-- EGG POPUP -->
-<div class="popup-overlay" id="egg-popup">
-  <div class="popup-box">
-    <button class="popup-close" onclick="closePopup()">×</button>
-    <div class="popup-egg">🥚</div>
-    <div class="popup-title" data-de="NICE!" data-en="NICE!"></div>
-    <div class="popup-text" data-de="Dein erstes Ei gefunden! Im Gym warten noch 6 echte auf dich. Werde Mitglied und starte die Jagd!" data-en="You found your first egg! 6 more are waiting for you in the gym. Become a member and start the hunt!"></div>
-    <a href="https://deine-mitgliedschaft.de/gymone" class="btn-primary" data-de="Jetzt Mitglied werden" data-en="Become a member now"></a>
-  </div>
-</div>
-
 <script>
-// LANGUAGE
-let currentLang = 'de';
-
-function setLang(lang) {
-  currentLang = lang;
-  document.documentElement.lang = lang;
-  document.getElementById('btn-de').classList.toggle('active', lang === 'de');
-  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-
-  document.querySelectorAll('[data-de]').forEach(el => {
-    const txt = el.getAttribute('data-' + lang);
-    if (txt !== null) el.innerHTML = txt;
-  });
-
+let lang='de';
+function setLang(l){
+  lang=l;
+  document.documentElement.lang=l;
+  document.getElementById('btn-de').classList.toggle('active',l==='de');
+  document.getElementById('btn-en').classList.toggle('active',l==='en');
+  document.querySelectorAll('[data-de]').forEach(el=>{const v=el.getAttribute('data-'+l);if(v!==null)el.innerHTML=v;});
   renderQuiz();
 }
-
-// COUNTDOWN
-function updateCountdown() {
-  const target = new Date('2026-04-19T23:59:59');
-  const now = new Date();
-  const diff = target - now;
-
-  if (diff <= 0) {
-    document.getElementById('cd-days').textContent = '00';
-    document.getElementById('cd-hours').textContent = '00';
-    document.getElementById('cd-mins').textContent = '00';
-    document.getElementById('cd-secs').textContent = '00';
-    return;
-  }
-
-  const d = Math.floor(diff / 86400000);
-  const h = Math.floor((diff % 86400000) / 3600000);
-  const m = Math.floor((diff % 3600000) / 60000);
-  const s = Math.floor((diff % 60000) / 1000);
-
-  document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
-  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
-  document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
-  document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+function tick(){
+  const diff=new Date('2026-04-19T23:59:59')-new Date();
+  if(diff<=0)return;
+  const pad=n=>String(Math.floor(n)).padStart(2,'0');
+  document.getElementById('cd-d').textContent=pad(diff/86400000);
+  document.getElementById('cd-h').textContent=pad((diff%86400000)/3600000);
+  document.getElementById('cd-m').textContent=pad((diff%3600000)/60000);
+  document.getElementById('cd-s').textContent=pad((diff%60000)/1000);
 }
-
-setInterval(updateCountdown, 1000);
-updateCountdown();
-
-// FAQ
-function toggleFaq(el) {
-  const item = el.parentElement;
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-  if (!isOpen) item.classList.add('open');
+setInterval(tick,1000);tick();
+function toggleFaq(el){
+  const item=el.parentElement;
+  const was=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!was)item.classList.add('open');
 }
-
-// EGG POPUP
-function showEggPopup() {
-  document.getElementById('egg-popup').classList.add('show');
-  setLang(currentLang);
-}
-
-function closePopup() {
-  document.getElementById('egg-popup').classList.remove('show');
-}
-
-document.getElementById('egg-popup').addEventListener('click', function(e) {
-  if (e.target === this) closePopup();
-});
-
-// SCROLL REVEAL
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// QUIZ
-const quizData = {
-  de: {
-    questions: [
-      {
-        q: 'Was ist dein Hauptziel?',
-        opts: ['Abnehmen & Fett verbrennen', 'Muskulatur aufbauen', 'Fit & gesund bleiben', 'Stressabbau & Ausgleich']
-      },
-      {
-        q: 'Wie oft möchtest du trainieren?',
-        opts: ['1-2x pro Woche', '3-4x pro Woche', '5+ mal pro Woche', 'So oft wie möglich']
-      },
-      {
-        q: 'Was ist dir wichtig?',
-        opts: ['Flexible Zeiten', 'Top Ausstattung', 'Kein langer Anfahrtsweg', 'Preis-Leistung']
-      }
-    ],
-    result: 'GymOne ist perfekt für dich! Starte jetzt und sichere dir deine Bonuslose.'
-  },
-  en: {
-    questions: [
-      {
-        q: 'What is your main goal?',
-        opts: ['Lose weight & burn fat', 'Build muscle', 'Stay fit & healthy', 'Stress relief & balance']
-      },
-      {
-        q: 'How often do you want to train?',
-        opts: ['1-2x per week', '3-4x per week', '5+ times per week', 'As often as possible']
-      },
-      {
-        q: 'What matters most to you?',
-        opts: ['Flexible hours', 'Top equipment', 'Short commute', 'Value for money']
-      }
-    ],
-    result: 'GymOne is perfect for you! Start now and secure your bonus raffle entries.'
-  }
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const qData={
+  de:{qs:[{q:'Was ist dein Hauptziel?',opts:['Abnehmen','Muskeln aufbauen','Fitter werden']},{q:'Wie oft möchtest du trainieren?',opts:['1–2x / Woche','3–4x / Woche','5+ / Woche']},{q:'Was ist dir am wichtigsten?',opts:['Flexible Zeiten','Top Geräte','Kein langer Weg']}],result:'GymOne ist perfekt für dich! Starte jetzt und sichere dir deine Bonuslose.'},
+  en:{qs:[{q:'What is your main goal?',opts:['Lose weight','Build muscle','Get fitter']},{q:'How often do you want to train?',opts:['1–2x / week','3–4x / week','5+ / week']},{q:'What matters most?',opts:['Flexible hours','Top equipment','Short commute']}],result:'GymOne is perfect for you! Start now and secure your bonus raffle entries.'}
 };
-
-let quizStep = 0;
-let quizAnswers = [];
-
-function renderQuiz() {
-  const data = quizData[currentLang];
-  const resultEl = document.getElementById('quiz-result');
-  const qEl = document.getElementById('quiz-q');
-  const optsEl = document.getElementById('quiz-opts');
-
-  if (quizStep >= data.questions.length) {
-    qEl.style.display = 'none';
-    optsEl.style.display = 'none';
-    resultEl.style.display = 'block';
-    document.getElementById('quiz-result-text').textContent = data.result;
-    document.querySelectorAll('.quiz-dot').forEach((d,i) => d.classList.toggle('active', i < data.questions.length));
-    return;
-  }
-
-  qEl.style.display = 'block';
-  optsEl.style.display = 'flex';
-  resultEl.style.display = 'none';
-
-  const q = data.questions[quizStep];
-  qEl.textContent = q.q;
-  optsEl.innerHTML = q.opts.map(o => `<button class="quiz-option" onclick="quizAnswer('${o}')">${o}</button>`).join('');
-  document.querySelectorAll('.quiz-dot').forEach((d,i) => d.classList.toggle('active', i <= quizStep));
+let qStep=0;
+function renderQuiz(){
+  const d=qData[lang];
+  const rEl=document.getElementById('q-result');
+  const qEl=document.getElementById('q-text');
+  const oEl=document.getElementById('q-opts');
+  const sEl=document.getElementById('q-step');
+  if(qStep>=d.qs.length){qEl.style.display='none';oEl.style.display='none';sEl.style.display='none';rEl.style.display='block';document.getElementById('q-result-text').textContent=d.result;document.querySelectorAll('.quiz-dot').forEach((dot,i)=>dot.classList.toggle('on',i<d.qs.length));return;}
+  qEl.style.display='block';oEl.style.display='flex';sEl.style.display='block';rEl.style.display='none';
+  const q=d.qs[qStep];
+  sEl.textContent=`${qStep+1} / ${d.qs.length}`;
+  qEl.textContent=q.q;
+  oEl.innerHTML=q.opts.map(o=>`<button class="quiz-opt" onclick="pickOpt(this)">${o}</button>`).join('');
+  document.querySelectorAll('.quiz-dot').forEach((dot,i)=>dot.classList.toggle('on',i<=qStep));
 }
-
-function quizAnswer(ans) {
-  quizAnswers.push(ans);
-  quizStep++;
-  renderQuiz();
-}
-
-// FORM
-function submitForm(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('button[type=submit]');
-  btn.textContent = currentLang === 'de' ? '✓ Anfrage gesendet!' : '✓ Request sent!';
-  btn.style.background = '#1a7a3a';
-  btn.style.borderColor = '#1a7a3a';
-  btn.disabled = true;
-}
-
-// INIT
-renderQuiz();
-setLang('de');
+function pickOpt(btn){document.querySelectorAll('.quiz-opt').forEach(b=>b.classList.remove('sel'));btn.classList.add('sel');setTimeout(()=>{qStep++;renderQuiz();},380);}
+function submitForm(e){e.preventDefault();const btn=e.target.querySelector('button[type=submit]');btn.textContent=lang==='de'?'✓ Gesendet!':'✓ Sent!';btn.style.background='#1a7a3a';btn.style.borderColor='#1a7a3a';btn.disabled=true;}
+renderQuiz();setLang('de');
 </script>
 </body>
 </html>
